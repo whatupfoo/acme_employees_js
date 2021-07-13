@@ -58,3 +58,9 @@ const generateManagementTree = (array) => {
 }
 
 console.log(JSON.stringify(generateManagementTree(employees), null, 2))
+
+function displayReports(obj,prefixstring){
+  console.log(prefixstring+obj)
+  const reports = obj.reports
+  reports.forEach(report => displayReports(report, prefixstring+"-"))
+}
