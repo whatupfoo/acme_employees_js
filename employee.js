@@ -44,4 +44,17 @@ const findManagementChainForEmployee = (func,array) => {
   return chain.reverse()
 }
 
-console.log(findManagementChainForEmployee(findEmployeeByName('shep Jr.', employees), employees))
+// console.log(findManagementChainForEmployee(findEmployeeByName('shep Jr.', employees), employees))
+
+const generateManagementTree = (array) => {
+  let bossArray = array.filter(employeeObj => employeeObj.managerId === undefined);
+  let topBoss = bossArray[0];
+
+  topBossId = topBoss.id
+  const subordinates = array.filter(elem => elem.managerId === topBossId)
+  topBoss.reports = subordinates
+
+
+}
+
+console.log(JSON.stringify(generateManagementTree(employees), null, 2))
