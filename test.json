@@ -1,0 +1,52 @@
+{
+  "id": 1,
+  "name": "moe",
+  "reports": [
+    {
+      "id": 2,
+      "name": "larry",
+      "managerId": 1,
+      "reports": [
+        {
+          "id": 4,
+          "name": "shep",
+          "managerId": 2,
+          "reports": [
+            {
+              "id": 8,
+              "name": "shep Jr.",
+              "managerId": 4,
+              "reports": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "curly",
+      "managerId": 1,
+      "reports": [
+        {
+          "id": 5,
+          "name": "groucho",
+          "managerId": 3,
+          "reports": [
+            {
+              "id": 6,
+              "name": "harpo",
+              "managerId": 5,
+              "reports": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "name": "lucy",
+      "managerId": 1,
+      "reports": []
+    }
+  ]
+}

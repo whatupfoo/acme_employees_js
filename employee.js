@@ -1,4 +1,3 @@
-console.clear()
 const employees = [
   { id: 1, name: 'moe'},
   { id: 2, name: 'larry', managerId: 1},
@@ -31,4 +30,18 @@ const findCoworkersFor = (func,array) => {
   console.log(coworkers)
 }
 
-console.log(findCoworkersFor(findEmployeeByName('larry', employees), employees));/*
+//console.log(findCoworkersFor(findEmployeeByName('larry', employees), employees));
+
+const findManagementChainForEmployee = (func,array) => {
+  let chain = []
+  let managerObj = findManagerFor(func,array)
+
+  while (managerObj!== undefined){
+    chain.push(managerObj)
+    let managerName = managerObj.name
+    managerObj = findManagerFor(findEmployeeByName(managerName, employees), employees)
+  }
+  return chain.reverse()
+}
+
+console.log(findManagementChainForEmployee(findEmployeeByName('shep Jr.', employees), employees))
